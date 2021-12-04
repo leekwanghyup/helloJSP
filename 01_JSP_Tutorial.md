@@ -81,25 +81,17 @@ for(int i=6; i>=1; i--){
 %>
 ```
 
-> common.Constans 클래스 생성
-```java
-public class Constans {
-	public static final int MAX = 100; 
-}
-```
-
 > index.jsp
 ```jsp
-<%@page import="common.Constans"%>
 <!-- sub.jsp 파일에서 선언 및 할당한 변수를 사용할 수 있다. -->
 <%@ include file="sub.jsp" %>
+<%= msg %>
+
 <style>
 body { 
 	background : <%= background %> 
 }
 </style>
-<!-- ... -->
-<h2>MAX : <%= Constans.MAX %></h2>
 ```
 
 ## 향상된 for문
