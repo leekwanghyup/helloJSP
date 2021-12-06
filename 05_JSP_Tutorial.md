@@ -32,5 +32,21 @@ select * from books;
 
 -- nvl(A,B)
 -- A가 null이면 B값을 기본값으로 사용한다. 
+```
 
+> BooDTO
+
+``` java
+public class BookDTO {
+	private int id; 
+	private String title; 
+	private String author; 
+	private int price; 
+	private int amount;
+    // 생성자 및 게터세터 투스트링 
+}
+```
+
+index.jsp
+```
 ```
