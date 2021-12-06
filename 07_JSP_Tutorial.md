@@ -101,3 +101,134 @@ public class MemberDAO {
 	}
 ```
 
+## 키워드 검색
+```sql
+create table keywords(
+    keyword varchar2(50)
+);
+insert into keywords values ('java1');
+insert into keywords values ('java2');
+insert into keywords values ('java3');
+insert into keywords values ('jsp1');
+insert into keywords values ('jsp2');
+insert into keywords values ('jsp3');
+insert into keywords values ('spring1');
+insert into keywords values ('spring2');
+insert into keywords values ('spring3');
+commit;
+```
+
+<br>
+
+> index.jsp
+```jsp
+<%@page import="books.BookDTO"%>
+<%@page import="java.util.List"%>
+<%@page import="books.BookDAO"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" referrerpolicy="no-referrer"></script>
+
+</head>
+<body>
+<p>키워드를 입력하세요</p>
+<input type="text" id="search">
+<div id="result"></div>
+</body>
+
+<script>
+$(function(){
+	$("#search").keyup(function(){
+		var search = $('#search').val(); 
+		
+		if(search == ""){
+			$("#result").html("");
+		} else {
+			$.ajax({
+				url : "result.jsp",
+				data : {"search" : search},
+				success : function(data){
+					$("#result").html(data);
+				}
+			})				
+		}
+	}); 
+})
+</script>
+</html>
+
+
+```
+
+> index.jsp
+```java
+package keyword;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
+import common.DB;
+
+public class KeywordDAO {
+	
+	public  KeywordDAO() {}
+	
+	public List<String> list(String keyword){
+		List<String> items = new ArrayList<>(); 
+		Connection conn = null; 
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		
+		try {
+			conn = DB.dbConn(); 
+			pstmt = conn.prepareStatement("select * from keywords where keyword like ?");
+			pstmt.setString(1, keyword+"%");
+			rs = pstmt.executeQuery(); 
+			while (rs.next()) {
+				items.add(rs.getString("keyword"));
+			}
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			try {if(rs!= null) rs.close();}
+			catch (SQLException e) {e.printStackTrace();}
+			try {if(pstmt!= null) pstmt.close();}
+			catch (SQLException e) {e.printStackTrace();}
+			try {if(conn!= null) conn.close();}
+			catch (SQLException e) {e.printStackTrace();}
+		}
+		
+		return items;
+	}
+}
+
+```
+
+> result.jsp
+```jsp
+<%@page import="java.util.List"%>
+<%@page import="keyword.KeywordDAO"%>
+<%@page import="member.MemberDAO"%>
+<%@page import="member.MemberDTO"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+
+<%
+	String keyword = request.getParameter("search");
+	KeywordDAO dao = new KeywordDAO(); 
+	List<String> items = dao.list(keyword);
+	for(String str : items ){
+		out.print(str + "<br>");
+	}
+%>
+```
