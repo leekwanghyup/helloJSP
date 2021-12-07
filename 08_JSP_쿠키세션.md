@@ -127,45 +127,6 @@ out.print("저장되었습니다");
 ## 세션 삭제
 > delete_session.jsp
 ```jsp
-<%@page import="java.util.Enumeration"%>
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-
-<h2>모든 세션정보 확인 </h2>
-<%
-	// 열거객체 
-	Enumeration<String> en = session.getAttributeNames();// 세션변수 이름  
-	while(en.hasMoreElements()){ // 반복할 요소가 있다면 실행
-		String key = en.nextElement(); // 반복대상 요소 
-		Object value = session.getAttribute(key);
-		out.print("key : " + key );
-		out.print(" ||||  value : " + value + "<br>");
-	}
-%>
-
-<br>
-<%
-	String id = (String) session.getAttribute("id"); // 타입 캐스팅 필수 
-	String password =(String) session.getAttribute("password");
-	int age = 0;
-	if(session.getAttribute("age")!= null){ // 숫자타입은 null 검사 필수
-		age = (int) session.getAttribute("age");
-	}
-	double height = 0;
-	if(session.getAttribute("height")!=null){
-		height = (double) session.getAttribute("height");
-	}
-%>
-<h2>세션 확인</h2>
-아이디 : <%= id %> <br> 
-비밀번호 : <%= password %> <br>
-나이 : <%= age %> <br>
-키 : <%= height %> <br>
-
-<h2></h2>
-
-<a href="delete_session.jsp">세션 삭제</a>
-
 ```
 
 <br>
