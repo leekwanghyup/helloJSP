@@ -27,14 +27,18 @@
          <td>2020-11-11</td>
          <td><button>삭제</button></td>
       </tr>
-      <div class="error_comment">
+      <tr class="error_comment">
+         <td  colspan="5">
+            <div class="target">
             <p>오류신고에대한 답변입니다.</p>
             <ul>
                <li>오류신고에대한 답변입니다.</li>
                <li>1</li>
                <li>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsum similique facilis praesentium, quidem quibusdam nobis. Eius nisi eligendi enim reiciendis doloremque! Sed eveniet temporibus illum! Ducimus quis iste maiores beatae.</li>
             </ul>
-      </div>
+            </div>
+         </td>
+      </tr>
       <tr>
          <td>54208</td>
          <td><a href="" class="subject">오류신고에대한 답변입니다.</a></td>
@@ -42,7 +46,9 @@
          <td>2020-11-11</td>
          <td><button>삭제</button></td>
       </tr>
-      <div class="error_comment">
+      <tr class="error_comment">
+         <td colspan="5">
+            <div class="target">
             <p>오류신고에대한 답변입니다.</p>
             <ul>
                <li>2</li>
@@ -52,7 +58,9 @@
                <li>2</li>
                <li>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsum similique facilis praesentium, quidem quibusdam nobis. Eius nisi eligendi enim reiciendis doloremque! Sed eveniet temporibus illum! Ducimus quis iste maiores beatae.</li>
             </ul>
-      </div>
+            </div>
+         </td>
+      </tr>
       
       
 
@@ -61,12 +69,18 @@
 <script>
 $(function(){
 
-   // $('.error_comment').hide();
+   $('.target').hide();
    $('.error_report .subject').click(function(e){
       e.preventDefault();
-      console.log('되냐');
-      $(this).closest('tr').next('.error_comment').css('background','red');
-   })
+      let targetRow = $(this).closest('tr').next();
+      targetRow.show().find('div').slideToggle('slow',function(){
+         if (!$(this).is(':visible')) {
+             targetRow.hide();
+         }
+      }); 
+   });
+
+
 
 });
 </script>
