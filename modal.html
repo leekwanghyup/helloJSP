@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+
+<section class="Big_BoxWrap">
+    
+    <div class="Big_BoxWrap">
+        <article class="Big_Box">
+            
+        <div class="Big_Box_imgbx" data-target="simpleModal_1">
+            <div class="modalBtn">
+                <img src="/img/sub/mapt.png" alt="단계그래프">
+            </dvi>
+            
+            <div id="simpleModal_1" class="modal">
+                <div class="modal-window onlyImg gp_modal">
+                    <button class="closeBtn"><img src="/img/sub/close.png" alt="닫기"></button>
+                    <div class="mCon">
+                        <div class="gp_text">
+                        <span>초1-1학기 1,9까지의 수</span>
+                        <ul>
+                            <li>1,2,3,4,5 알아보기
+                                <button class="gp_btn1">동강</button>
+                                <button class="gp_btn2">유형연습</button>
+                            </li>
+                        </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </article>
+
+    </div>
+    
+</section>
+
+
+<style>
+#simpleModal_1 { display: none;}
+.Big_BoxWrap{padding:30px; position: relative; width: 100%; margin-top:70px; background: #ebeeff; padding:30px;}
+.Big_Box {background:#fff;width:100%; border-radius:15px;}
+.Big_Box_imgbx {padding:20px 0 20px 20px;}
+.Big_Box_imgbx img{width:100%;}
+.Big_Box_imgbx .modal { position: fixed; top: 0; left: 0; bottom: 0; right: 0;display: block; overflow: auto; background: #000; background: rgba(0, 0, 0, 0.7); z-index: 9999;}
+.Big_Box_imgbx .modal .modal-window {position: absolute; background:#e0e0e0; width: 100%; max-width: 800px; height: 600px; left: 50%; top: 50%; margin: 0 auto; transform: translate(-50%,-50%); border-radius: 10px;}
+.Big_Box_imgbx .modal .modal-window .mcon .gp_text {}
+
+</style>
+
+<script>
+$(function(){
+// 모달 열기
+    $('.modalBtn').click(function(){
+        $('.modal').fadeIn();
+    })
+
+// 모달창닫기
+    $('.modal .closeBtn').click(function(){
+        console.log('되나');
+        $('.modal').fadeOut();
+    });
+});
+
+
+</script>    
+</body>
+
+</html>

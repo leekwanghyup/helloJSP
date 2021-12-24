@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+</head>
+<body>
+<table class="pro_table">
+    <tbody><tr>
+        <th rowspan="2">학년</th>
+        <th rowspan="2">교과</th>
+        <th rowspan="2">과목</th>
+        <th rowspan="2">학기</th>
+        <th rowspan="2">분류</th>
+        <th rowspan="2">난이도</th>
+        <th rowspan="2">합격점수</th>
+        <th rowspan="2">결과</th>
+        <th colspan="3">시험일시/풀이시간</th>
+    </tr>
+    <tr>
+        <th colspan="3">채점결과</th>
+    </tr>
+    <tr>
+        <td rowspan="2">초6</td>
+        <td rowspan="2">사회</td>
+        <td rowspan="2">(새 교육과정)사회</td>
+        <td rowspan="2">2학기</td>
+        <td rowspan="2" class="td_width200">1.세계 여러 나라의 자연과 문화&gt;1.지구,대륙 그리고 국가들&gt;세계 여러 나라의 면적과 모양을 살펴봅시다</td>
+        <td rowspan="2">C</td>
+        <td rowspan="2">80점</td>
+        <td rowspan="2">불합격(0점)</td>
+        <td>20.08.11 17:06:12<br>20.08.11 17:07:05</td>
+        <td>00:00:53</td>
+        <td><a href="#"><img src="/img/sub/icon_45.png" alt="한문제씩보기"></a></td>
+    </tr>
+    <tr>
+        <td colspan="3" class="pro_TDulbox">
+        <ul class="check_answer">
+            <li>1<p>O</p></li>
+            <li>1<p>O</p></li>
+            <li>1<p>O</p></li>
+            <li>1<p>O</p></li>
+            <li>1<p>O</p></li>
+            <li>1<p>O</p></li>
+            <li>1<p>O</p></li>
+            <li>1<p>O</p></li>
+            <li>1<p>O</p></li>
+            <li>1<p>O</p></li>
+            <li>1<p>O</p></li>
+            <li>1<p>O</p></li>
+            <li>1<p>O</p></li>
+            <li>1<p>O</p></li>
+            <li>1<p>O</p></li>
+        </ul>    
+        </td>
+    </tr>
+</tbody>
+</table>
+
+<style>
+/* 임시적용*/
+table {width: 80%; border: 1px solid red;}
+* {margin: 0; padding: 0;}
+
+
+
+
+/* 적절한 패딩을 준다 */
+.check_answer { max-width: 300px; cursor: pointer; background: #666; padding: 0 25px; }
+
+/* button css를 */
+.check_answer .slick-arrow {
+    border: none; /* 버튼의 기본테두리 제거*/
+    width: 15px;  /* 이미지의 크기에 맞게 너비 설정*/
+    text-indent: -9999px; /*텍스트 제거*/
+    /* 가운데 정렬*/
+    position: absolute; top: 50%;  z-index: 10;
+    transform: translate(0,-50%);
+}
+/* 이미지 삽입 및 위치 설정 */
+.check_answer .slick-prev { background: no-repeat url('arrow_prev.png'); left: 0;}
+.check_answer .slick-next { background: no-repeat url('arrow_next.png'); right: 0;  }
+
+
+</style>
+<script>
+$('.check_answer').slick({
+  infinite: false,
+  speed: 300,
+  slidesToShow: 10, // 하나의 슬라이드에 보여줄 문항 수
+  slidesToScroll: 10, // 한 번 슬라이드 할 때 넘어가는 문항 수 
+  // arrows : false, // 이부분 삭제 
+  responsive: [
+    {
+      breakpoint: 900, // 900px이하에서 설정
+      settings: {
+        slidesToShow: 6,
+        slidesToScroll: 6
+      }
+    },
+    {
+      breakpoint: 680,
+      settings: {
+        slidesToShow: 4,
+        slidesToScroll: 4
+      }
+    }
+  ]
+});
+</script>
+</body>
+</html>

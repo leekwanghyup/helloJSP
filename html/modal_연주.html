@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+
+<section class="Big_BoxWrap">
+    
+    <div class="Big_BoxWrap">
+        <article class="Big_Box">
+            
+        <div class="Big_Box_imgbx">
+            <div class="modalBtn">
+                모달창
+            </dvi>
+            
+            <div class="modal">
+                <div class="modal-window">
+                    <button class="closeBtn">닫기</button>
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Temporibus laboriosam fugiat ipsa eos tempore culpa sed ad architecto saepe optio illo, dicta tempora soluta. Voluptatum dolorum ut magnam eligendi unde.
+                </div>
+            </div>
+            </div>
+        </article>
+
+    </div>
+    
+</section>
+
+
+<style>
+.Big_BoxWrap{padding:30px; position: relative; width: 100%; margin-top:70px; background: #ebeeff; padding:30px;}
+
+.Big_Box_imgbx {padding:20px 0 20px 20px;}
+.Big_Box_imgbx img{width:100%;}
+.modal { position: fixed; top: 0; left: 0; bottom: 0; right: 0; display: none; overflow: auto; background: #000; background: rgba(0, 0, 0, 0.7); z-index: 9999;}
+.modal-window {position: absolute; background:#e0e0e0; width: 100%; max-width: 800px; height: 600px; left: 50%; top: 50%; margin: 0 auto; transform: translate(-50%,-50%); border-radius: 10px;}
+
+
+</style>
+
+<script>
+$(function(){
+// 모달 열기
+    $('.modalBtn').click(function(){
+        $('.modal').fadeIn();
+    })
+
+// 모달창닫기
+    $('.modal-window .closeBtn').click(function(){
+        $('.modal').fadeOut();
+    });
+});
+
+
+</script>    
+</body>
+
+</html>

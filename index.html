@@ -5,76 +5,132 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-
-
 </head>
 <body>
-   <table class="error_report">
-      <tr>
-         <th>no</th>
-         <th>제목</th>
-         <th>답변자</th>
-         <th>답변일자</th>
-         <th>삭제</th>
-      </tr>
-      <tr>
-         <td>54207</td>
-         <td><a href="" class="subject">오류신고에대한 답변입니다.</a></td>
-         <td>lee001</td>
-         <td>2020-11-11</td>
-         <td><button>삭제</button></td>
-      </tr>
-      <div class="error_comment">
-            <p>오류신고에대한 답변입니다.</p>
-            <ul>
-               <li>오류신고에대한 답변입니다.</li>
-               <li>1</li>
-               <li>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsum similique facilis praesentium, quidem quibusdam nobis. Eius nisi eligendi enim reiciendis doloremque! Sed eveniet temporibus illum! Ducimus quis iste maiores beatae.</li>
-            </ul>
-      </div>
-      <tr>
-         <td>54208</td>
-         <td><a href="" class="subject">오류신고에대한 답변입니다.</a></td>
-         <td>kim001</td>
-         <td>2020-11-11</td>
-         <td><button>삭제</button></td>
-      </tr>
-      <div class="error_comment">
-            <p>오류신고에대한 답변입니다.</p>
-            <ul>
-               <li>2</li>
-               <li>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsum similique facilis praesentium, quidem quibusdam nobis. Eius nisi eligendi enim reiciendis doloremque! Sed eveniet temporibus illum! Ducimus quis iste maiores beatae.</li>
-            </ul>
-            <ul>
-               <li>2</li>
-               <li>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsum similique facilis praesentium, quidem quibusdam nobis. Eius nisi eligendi enim reiciendis doloremque! Sed eveniet temporibus illum! Ducimus quis iste maiores beatae.</li>
-            </ul>
-      </div>
-      
-      
 
-   </table>
+   <section class="contents pop_videos">
+      <div class="wrap">
+         <article class="lBox">
+            <div class="bxWrap">
+               <div class="box pad">
+                  <div class="list">
+                     <h3 class="boxTit">학년</h3>
+                     <ul class="menuBtn smenu1">
+                                 <li><a class="grade" href="javascript:void(0);">초등1</a></li>
+                                 <li><a class="grade" href="javascript:void(0);">초등2</a></li>
+                                 <li><a class="grade" href="javascript:void(0);">초등3</a></li>
+                                 <li><a class="grade" href="javascript:void(0);">초등4</a></li>
+                                 <li><a class="grade" href="javascript:void(0);">초등5</a></li>
+                                 <li><a class="grade" href="javascript:void(0);">초등6</a></li>
+                                 <li><a class="grade" href="javascript:void(0);">중등1</a></li>
+                                 <li><a class="grade" href="javascript:void(0);">중등2</a></li>
+                                 <li><a class="grade" href="javascript:void(0);">중등3</a></li>
+                                 <li><a class="grade" href="javascript:void(0);">고등</a></li>
+                        <li class="on"><a class="grade" href="javascript:void(0);">전체</a></li>
+                             </ul>
+                  </div>
+                  <div class="list">
+                     <h3 class="boxTit">학기</h3>
+                     <ul class="menuBtn smenu2">
+                        <li class="on"><a class="semester" href="javascript:void(0);">1학기</a></li>
+                        <li><a class="semester" href="javascript:void(0);">2학기</a></li>
+                     </ul>
+                  </div>
+                  <div class="list">
+                     <h3 class="boxTit">과목</h3>
+                     <ul class="menuBtn smenu4">
+                        <li><a class="subject" href="javascript:voic(0);">국어</a></li>
+                        <li><a class="subject" href="javascript:voic(0);">영어</a></li>
+                        <li class="on"><a class="subject" href="javascript:voic(0);">수학</a></li>
+                        <li><a class="subject" href="javascript:voic(0);">과학</a></li>
+                        <li><a class="subject" href="javascript:voic(0);">사회</a></li>
+                        <li><a class="subject" href="javascript:voic(0);">역사1</a></li>
+                        <li><a class="subject" href="javascript:voic(0);">역사2</a></li>
+                        <li><a class="subject" href="javascript:voic(0);">전체</a></li>
+                     </ul>
+                  </div>
+                  <div class="list">
+                     <h3 class="boxTit">교과</h3>
+                     <select>
+                        <option value="">새 교육과정(본권)</option>
+                     </select>
+                  </div>
+                  <div class="list">
+                     <h3 class="boxTit">단원</h3>
+                     <select>
+                        <option value="">첫 단원</option>
+                     </select>
+                  </div>
+               </div>
+            </div>
+         </article>
 
+         <article class="rBox">
+            <div class="bxWrap">
+               <div class="box con of_inherit">
+                  <div class="titBar">
+                     <select>
+                        <option value="소단원 전체">소단원 전체</option>
+                     </select>
+                     <ul class="btnList">
+                        <li>
+                           <a href="#" class="print bbTxt listIcon"><img src="/assets/img/sub/icon_list2.png" alt="목차보기" data-target="simpleModal_3" data-toggle="modal">
+                              <div class="text_bb bt">
+                                 <span>목차보기</span>
+                              </div>
+                           </a>
+                           <!-- 신규강사등록 모달팝업 -->
+                           <div id="simpleModal_3" class="modal">
+                              <div class="modal-window window-SCROLL">
+                                 <button><img src="/assets/img/sub/close.png" alt="닫기" data-dismiss="modal"></button>
+                                 <div class="title"><h3>목차보기</h3></div>
+                                 <h2>모달컨텐츠</h2>
+                              </div>
+                           </div><!-- //신규강사등록 모달팝업 -->
+                        </li>         
+                     </ul>
+                  </div>
+                 
+               </div>
+            </div>
+         </article>
+      </div>
+   </section>
+   
+<style>
+   .modal{display: none;}
+   .open{ display: block; }
+</style>
 <script>
-$(function(){
 
-   // $('.error_comment').hide();
-   $('.error_report .subject').click(function(e){
-      e.preventDefault();
-      console.log('되냐');
-      $(this).closest('tr').next('.error_comment').css('background','red');
-   })
 
-});
+document.addEventListener('click', function (e) {
+   e.preventDefault();
+   
+ e = e || window.event;
+ var target = e.target || e.srcElement;
+ if (target.hasAttribute('data-toggle') && target.getAttribute('data-toggle') == 'modal') {
+     if (target.hasAttribute('data-target')) {
+      console.log('되나?');   
+         var m_ID = target.getAttribute('data-target');
+         document.getElementById(m_ID).classList.add('open');
+         e.preventDefault();
+     }
+ }
+
+ // Close modal window with 'data-dismiss' attribute or when the backdrop is clicked
+ if ((target.hasAttribute('data-dismiss') && target.getAttribute('data-dismiss') == 'modal') || target.classList.contains('modal')) {
+     var modal = document.querySelector('[class="modal open"]');
+     modal.classList.remove('open');
+     e.preventDefault();
+ }
+}, false);
+
 </script>
 
-<style>
-   table{width: 100%;}
-ul {width: inherit;}
-</style>
+
+
+
 </body>
 
 </html>
