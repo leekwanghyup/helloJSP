@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<style>
+/* 임시 테두리*/
+table {width: 100%;border-collapse: collapse;}
+tr,td,th{border: 1px solid ; }
+
+
+
+.modal { position: fixed; top: 0; left: 0; bottom: 0; right: 0; display: none; overflow: auto; background: #000; background: rgba(0, 0, 0, 0.7); z-index: 9999;}
+.modal-window {position: absolute; background:#e0e0e0; width: 100%; max-width: 800px; height: 600px; left: 50%; top: 50%; margin: 0 auto; transform: translate(-50%,-50%); border-radius: 10px;}
+.open { display: block;}
+</style>
+<body>
+    <ul class="btnList">
+        <li>
+           <a href="#" class="print bbTxt listIcon"><img src="/assets/img/sub/icon_list2.png" alt="목차보기" data-target="simpleModal_3" data-toggle="modal">
+           </a>
+           <!-- 신규강사등록 모달팝업 -->
+           <div id="simpleModal_3" class="modal">
+              <div class="modal-window window-SCROLL">
+                 <button><img src="/assets/img/sub/close.png" alt="닫기" data-dismiss="modal"></button>
+                 <div class="title"><h3>목차보기</h3></div>
+                 <h2>모달컨텐츠</h2>
+              </div>
+           </div><!-- //신규강사등록 모달팝업 -->
+        </li>         
+    </ul>
+
+    <div class="custom_service">
+        <button data-target="second_modal" data-toggle="modal" >두번째 모달</button>
+        <div id="second_modal" class="modal">
+            <div class="modal-window">
+                <h2>로그인</h2>
+            </div>
+        </div>
+    </div>
+    
+
+<script>
+$(function(){
+
+document.addEventListener('click', function (e) {
+e.preventDefault();
+   
+ e = e || window.event;
+ var target = e.target || e.srcElement;
+ if (target.hasAttribute('data-toggle') && target.getAttribute('data-toggle') == 'modal') {
+     if (target.hasAttribute('data-target')) {
+      console.log('되나?');   
+         var m_ID = target.getAttribute('data-target');
+         document.getElementById(m_ID).classList.add('open');
+         e.preventDefault();
+     }
+ }
+
+ // Close modal window with 'data-dismiss' attribute or when the backdrop is clicked
+ if ((target.hasAttribute('data-dismiss') && target.getAttribute('data-dismiss') == 'modal') || target.classList.contains('modal')) {
+     var modal = document.querySelector('[class="modal open"]');
+     modal.classList.remove('open');
+     e.preventDefault();
+ }
+}, false);
+
+});
+</script>
+</body>
+</html>
