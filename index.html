@@ -111,7 +111,6 @@ document.addEventListener('click', function (e) {
  var target = e.target || e.srcElement;
  if (target.hasAttribute('data-toggle') && target.getAttribute('data-toggle') == 'modal') {
      if (target.hasAttribute('data-target')) {
-      console.log('되나?');   
          var m_ID = target.getAttribute('data-target');
          document.getElementById(m_ID).classList.add('open');
          e.preventDefault();
