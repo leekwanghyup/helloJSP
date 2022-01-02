@@ -861,7 +861,7 @@ public class Main {
 		AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(AppConfig.class);
 		
 		Greeting greeting = ctx.getBean("greeting",Greeting.class);
-		greeting.greet("정상수", "부산");
+		greeting.greet("정상수", "부산 진구");
 		
 		ctx.close();	
 	}
